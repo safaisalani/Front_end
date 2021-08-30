@@ -7,5 +7,5 @@ import { FormGroup,FormControl,FormBuilder,Validator, Validators } from '@angula
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'site';
+  title = 'Crud and Angular Db';
 }
