@@ -1,36 +1,115 @@
 
 
+<div *ngIf="view">
+
+
+
+
+
+  <div class= "maincon" > 
+    <div  class="con">
+        <span class="sp bold">First Name :</span><span  class="sp">{{firstname}}</span>
+    </div>
+
+
+ 
+<div>
+    <div class="con">
+        <span  class="sp bold">Last Name :</span><span  class="sp">{{lastname}}</span>
+    </div>
+
+</div>
+
+<div>
+    <div class="con">
+        <span  class="sp bold">Middle Name :</span><span  class="sp">{{middle}}</span>
+    </div>
+
+</div>
+
+<div>
+    <div class="con">
+        <span  class="sp bold">Address :</span><span  class="sp">{{address}}</span>
+        <span  class="sp bold">Country :</span><span  class="sp">{{country}}</span>
+        <span  class="sp bold">State :</span><span  class="sp">{{state}}</span>
+        <span  class="sp bold">Zip Code :</span><span  class="sp">{{ZipCode}}</span>
+    </div>
+
+</div>
+
+<div>
+    <div class="con">
+
+        <span  class="sp bold">Email :</span><span  class="sp">{{email}}</span><span  class="sp bold">Phone Number :</span><span  class="sp">{{phone}}</span>
+    </div>
+
+</div>
 
 
 
 <div>
+    <div class="con">
+        <span  class="sp bold">Height :</span><span  class="sp">{{height}}</span><span  class="sp bold">Weight :</span><span class="sp">{{weight}}</span>
+    </div>
+
+</div>
+
+<div >
+  <div class="con" >
+      <span  class="sp" ><button (click)="back()" class="btn btn-info" style="float: right;">Back</button></span>
+  </div>
+
+</div>
+
+
+
+
+
+
+</div>
+
+
+</div>
+
+
+<div *ngIf="displaytable">
 <h3>User Detail</h3>
+<span style="float: right;">
+  <button type="button" class="btn btn-primary" style="cursor: pointer;"  (click)="Create()">Create New User</button>
+</span>
+<div style="position: relative;">
 <table class="table table-hover table-sm">
     <thead class="thead-dark">
       <tr>
-        <!-- <th>Id</th> -->
-        <th>Firstname</th>
-        <th>LastName</th>
-        <th>MiddleName</th>
+        <th>S.No</th>
+        <th>FullName</th>
         <th>PhoneNumber</th>
+        <th>Email</th>
         <th>Address</th>
+        <th>Country</th>
+        <th>State</th>
+        <th>ZipCode</th>       
         <th>Height</th>
-        <th>Weight></th>
-        <th></th>
+        <th>Weight</th>
+        <th>Actions</th>
       </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let User of Userlist">
-          <!-- <td>{{User.id}}</td> -->
-          <td>{{User.FirstName}}</td>
-          <td>{{User.LastName}}</td>
-          <td>{{User.MiddleName}}</td>
+        <tr *ngFor="let User of Userlist; let i = index">
+          <td>{{i+1}}</td>
+          <td>{{User.FirstName}} {{User.MiddleName}}  {{User.LastName}}</td>
           <td>{{User.PhoneNumber}}</td>
-          <td>{{User.Address}}</td>
           <td>{{User.Email}}</td>
-          <td>{{User.Weight}}</td>
-          <td>{{User.Height}}</td>
+          <td>{{User.Address}}</td>
+          <td>{{User.Country}}</td>
+          <td>{{User.State}}</td>
+          <td>{{User.ZipCode}}</td>
+          <td>{{User.Weight}} Cm</td>
+          <td>{{User.Height}} Kg</td>
+          <td><span style="cursor: pointer;" (click)="Deleteid(User.id)">🗑</span> 
+            <span style="padding-left: 10px;cursor: pointer;" (click)="viewdata(User.id)">👁</span></td>
         </tr>
     </tbody>
 </table>
+</div>
 </div>

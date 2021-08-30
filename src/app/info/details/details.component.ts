@@ -18,6 +18,7 @@ export class DetailsComponent implements OnInit {
   Statelist: any;
   car: any;
   balck: any;
+  details:any={};
 
   formG: FormGroup;
   fa: any;
@@ -33,12 +34,14 @@ export class DetailsComponent implements OnInit {
       ZipCode: ["", Validators.required],
       PhoneNumber: ["", Validators.required],
       Height: ["", Validators.required],
-      Weight: ["", Validators.required]
+      Weight: ["", Validators.required],
+      Country:[""]
     });
   }
 
   ngOnInit(): void {
 
+    this.details.Country = "91,India"
     // this.ListingService.getusername().subscribe((data=>{
     //   this.car = data
    // }))
@@ -62,7 +65,10 @@ export class DetailsComponent implements OnInit {
     });
   }
   setnow(valke: any) {
-    document.getElementsByClassName("nu")[0].innerHTML = "+" + valke;
+    valke = this.details.Country 
+    document.getElementsByClassName("nu")[0].innerHTML = "+" + parseInt(valke);
+    console.log(parseInt(valke),valke);
+    
 
 
 
@@ -98,9 +104,9 @@ export class DetailsComponent implements OnInit {
 
       this.fa = this.formG.value
       this.fa.state = document.getElementById("statem")?.innerHTML
-      this.fa.country = this.country_store
+      this.fa.country = this.details.Country[1]
       this.fa.countryCode =  document.getElementById("call")?.innerHTML
-    console.log(this.fa);}
+    console.log(this.fa.country);}
 
     this.ListingService.getdetails(this.fa).subscribe(data =>{    
 

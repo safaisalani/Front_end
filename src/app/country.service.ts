@@ -52,7 +52,7 @@ getusername
 getdetails
 (username:any): Observable<any> {
   const body={username};
-  return this.http.post('http://localhost:8000/mainapi/getdetails', body)
+  return this.http.post('http://localhost:8000/mainapi/InsertuserDetails', body)
 }
 
 
@@ -62,7 +62,15 @@ setdetails
   return this.http.get('http://localhost:8000/mainapi/getDetailslist')
 }
 
+public Deleteid(id:any){
+  const body={id};
+  return this.http.post('http://localhost:8000/mainapi/Deleteid', body)
+}
 
+public GetViewData(id:any){
+  const body={id};
+  return this.http.post('http://localhost:8000/mainapi/GetViewData', body)
+}
 
 
   //   getusername(username:any): Observable<any>{
