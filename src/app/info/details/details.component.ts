@@ -104,7 +104,7 @@ export class DetailsComponent implements OnInit {
 
       this.fa = this.formG.value
       this.fa.state = document.getElementById("statem")?.innerHTML
-      this.fa.country = this.details.Country[1]
+      this.fa.country = this.details.Country
       this.fa.countryCode =  document.getElementById("call")?.innerHTML
     console.log(this.fa.country);}
 

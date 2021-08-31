@@ -46,7 +46,7 @@ export class CountryService implements OnInit{
 getusername
 (username:any): Observable<any> {
   const body={username};
-  return this.http.post('http://localhost:8000/mainapi/getusername', body)
+  return this.http.post('http://localhost:8000/mainapi/loginauth', body)
 }
 
 getdetails
